@@ -1,0 +1,10 @@
+.qwerty-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+}
+
+button {
+  padding: 3rem;
+  margin: 20rem 6rem 0rem 6rem;
+}
