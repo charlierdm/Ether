@@ -1,10 +1,12 @@
 import KeyboardEventHandler from "react-keyboard-event-handler";
 
-export const QwertyHandler = () => {
+export const QwertyHandler = ({ setKeyPress }) => {
   return (
     <KeyboardEventHandler
       handleKeys={["a", "s", "d"]}
-      onKeyEvent={(key, e) => console.log(`Pressed ${key}`)}
+      onKeyEvent={(key, e) => {
+        setKeyPress(key);
+      }}
     />
   );
 };
