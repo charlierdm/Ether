@@ -6,8 +6,6 @@ import { QwertyHandler } from "./Components/QwertyHandler";
 const App = () => {
   const [keyPress, setKeyPress] = useState('');
 
-  console.log(keyPress);
-
   return (
     <div className="app-container">
       <QwertyHandler setKeyPress={setKeyPress} />
