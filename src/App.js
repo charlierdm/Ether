@@ -1,14 +1,15 @@
 import "./App.css";
-import { QwertyA } from "./Components/QwertyA";
-import { QwertyS } from "./Components/QwertyS";
-import { QwertyD } from "./Components/QwertyD";
+import { useState } from "react";
+import { QwertyButtons } from "./Components/QwertyButtons";
+import { QwertyHandler } from "./Components/QwertyHandler";
 
-function App() {
+const App = () => {
+  const [key, setKey] = useState('');
+
   return (
     <div className="App-Container">
-      <QwertyA />
-      <QwertyS />
-      <QwertyD />
+      <QwertyHandler />
+      <QwertyButtons />
     </div>
   );
 }
