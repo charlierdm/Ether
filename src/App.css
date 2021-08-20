@@ -7,7 +7,7 @@
 }
 
 button {
-  padding: 2.5rem 3rem;
+  padding: 2.5rem 3.5rem;
   margin: 20rem 6rem 0rem 6rem;
   font-size: 2rem;
   font-family: 'Open Sans';
@@ -15,7 +15,7 @@ button {
   border-style: none;
   border-radius: 0.6rem;
   box-shadow: 0 0.3rem 0.5rem 0 rgb(116, 117, 117);
-  transition: box-shadow 0.9s;
+  transition: box-shadow 0.5s;
   cursor: pointer;
 }
 
@@ -26,17 +26,17 @@ button:hover {
 
 .press-a {
   box-shadow: 0 8px 14px 0 rgb(97, 160, 160);
-  transition: box-shadow 0.9s;
+  transition: box-shadow 0.5s;
 }
 
 .press-s {
   box-shadow: 0 8px 14px 0 rgb(187, 163, 120);
-  transition: box-shadow 0.9s;
+  transition: box-shadow 0.5s;
 }
 
 .press-d {
   box-shadow: 0 8px 14px 0 rgb(221, 186, 212);
-  transition: box-shadow 0.9s;
+  transition: box-shadow 0.5s;
 }
 
 /* 

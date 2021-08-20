@@ -1,6 +1,20 @@
 import "../App.css";
+import { useEffect } from "react";
 
-export const QwertyButtons = ({ keyPress }) => {
+export const QwertyButtons = ({ keyPress, setKeyPress }) => {
+
+  useEffect(() => {
+    document.addEventListener('keydown', e => {
+     setKeyPress(e.key);
+    })
+
+    document.addEventListener('keyup', e => {
+      if (e.key) {
+        setKeyPress("")
+      }
+    })
+  })
+
   return (
     <div className="qwerty-buttons">
       <button className={keyPress === 'a' ? "press-a" : ""}>A</button>
