@@ -19,19 +19,22 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
 
   const audioD = new Howl({
     src: [qwertyAudioD],
-    volume: 0.7
+    volume: 1
   });  
   
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       setKeyPress(e.key);
-      audioD.play();
+      if (!audioD.playing()) {
+        audioD.play();
+      }
+      
     });
 
     document.addEventListener("keyup", (e) => {
       if (e.key) {
         setKeyPress("");
-        audioD.fade(1, 0, 1500);
+        audioD.stop();
       }
     });
   }, []);
