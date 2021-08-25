@@ -6,13 +6,9 @@ import qwertyAudioD from './qwertyAudioD.mp3';
 import qwertyAudioS from './qwertyAudioS.mp3';
 
 export const QwertyButtons = ({ keyPress, setKeyPress }) => {
+
   const audioA = new Howl({
     src: [qwertyAudioA],
-    volume: 0.3
-  });
-
-  const audioD = new Howl({
-    src: [qwertyAudioD],
     volume: 0.3
   });
 
@@ -20,20 +16,25 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
     src: [qwertyAudioS],
     volume: 0.3
   });
-  
+
+  const audioD = new Howl({
+    src: [qwertyAudioD],
+    volume: 0.7
+  });  
   
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       setKeyPress(e.key);
-      audioS.play();
+      audioD.play();
     });
 
     document.addEventListener("keyup", (e) => {
       if (e.key) {
         setKeyPress("");
+        audioD.fade(1, 0, 1500);
       }
     });
-  });
+  }, []);
 
   return (
     <div className="qwerty-buttons">
