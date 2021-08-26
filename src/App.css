@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 .qwerty-buttons {
   display: grid;
@@ -10,7 +10,7 @@ button {
   padding: 2.5rem 3.5rem;
   margin: 20rem 6rem 0rem 6rem;
   font-size: 2rem;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   color: rgb(156, 156, 156);
   border-style: none;
   border-radius: 0.6rem;
@@ -39,8 +39,22 @@ button:hover {
   transition: box-shadow 1.2s;
 }
 
-/* 
-@media screen and (min-width: 720) {
+@media (max-width: 786px) {
   .qwerty-buttons {
-
-} */
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+  }
+  button {
+    padding: 2.5rem 3.5rem;
+    margin: 4rem 6rem 0rem 6rem;
+    font-size: 2rem;
+    font-family: "Open Sans";
+    color: rgb(156, 156, 156);
+    border-style: none;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.3rem 0.5rem 0 rgb(116, 117, 117);
+    transition: box-shadow 1.2s;
+    cursor: pointer;
+  }
+}
