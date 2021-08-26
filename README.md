@@ -1,4 +1,4 @@
-# Ether-Visual-Audio
+# Ether
 
 Ether is a visual audio project, built using React and Ableton Live.
 

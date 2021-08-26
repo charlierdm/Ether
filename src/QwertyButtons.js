@@ -57,9 +57,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   };
 
   const handleStop = (e) => {
-    if (e.key.toLowerCase()) {
-      setKeyPress("fade-bg-back");
-    }
+    setKeyPress("fade-bg-back");
     sampleFadeAndStop(e.key.toLowerCase());
   };
 
