@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { QwertyButtons } from "./Components/QwertyButtons";
+import { QwertyButtons } from "./QwertyButtons";
 
 const App = () => {
   const [keyPress, setKeyPress] = useState("");

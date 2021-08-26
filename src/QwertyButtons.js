@@ -1,4 +1,4 @@
-import "../App.css";
+import "./App.css";
 import { useEffect } from "react";
 import { Howl } from "howler";
 import qwertyAudioA from "./qwertyA.mp3";
