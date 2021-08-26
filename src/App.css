@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
+.a-app-container {
+  background-color: rgb(216, 231, 229);
+  min-height: 100vh;
+  transition: background-color 1.4s ease-in-out;
+}
+
+.s-app-container {
+  background-color: rgb(233, 219, 208);
+  min-height: 100vh;
+  transition: background-color 1.4s ease-in-out ;
+}
+
+.d-app-container {
+  background-color: rgb(238, 232, 238);
+  min-height: 100vh;
+  transition: background-color 1.4s ease-in-out;
+}
+
 .qwerty-buttons {
   display: grid;
   grid-auto-flow: column;
@@ -30,7 +48,7 @@ button:hover {
 }
 
 .press-s {
-  box-shadow: 0 8px 14px 0 rgb(187, 163, 120);
+  box-shadow: 0 8px 14px 0 rgb(214, 173, 140);
   transition: box-shadow 1.2s;
 }
 

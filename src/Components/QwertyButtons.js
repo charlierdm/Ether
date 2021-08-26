@@ -22,27 +22,27 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   });
 
   const selectSampleToPlay = (key) => {
-    if (key === "a" && !audioA.playing()) return audioA.play();
-    if (key === "s" && !audioS.playing()) return audioS.play();
-    if (key === "d" && !audioD.playing()) return audioD.play();
+    if (key.toLowerCase() === "a" && !audioA.playing()) return audioA.play();
+    if (key.toLowerCase() === "s" && !audioS.playing()) return audioS.play();
+    if (key.toLowerCase() === "d" && !audioD.playing()) return audioD.play();
   };
 
   const sampleFadeAndStop = (key) => {
-    if (key === "a") {
+    if (key.toLowerCase() === "a") {
       audioA.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioA.stop();
         audioA.fade(0, 0.8, 0);
       }, 1500);
     }
-    if (key === "s") {
+    if (key.toLowerCase() === "s") {
       audioS.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioS.stop();
         audioS.fade(0, 0.8, 0);
       }, 1500);
     }
-    if (key === "d") {
+    if (key.toLowerCase() === "d") {
       audioD.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioD.stop();
@@ -51,18 +51,21 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("keydown", (e) => {
-      setKeyPress(e.key);
-      selectSampleToPlay(e.key);
-    });
+  const handlePlay = (e) => {
+    setKeyPress(e.key.toLowerCase());
+    selectSampleToPlay(e.key.toLowerCase());
+  };
 
-    document.addEventListener("keyup", (e) => {
-      if (e.key) {
-        setKeyPress("");
-      }
-      sampleFadeAndStop(e.key);
-    });
+  const handleStop = (e) => {
+    if (e.key.toLowerCase()) {
+      setKeyPress("");
+    }
+    sampleFadeAndStop(e.key.toLowerCase());
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => handlePlay(e));
+    document.addEventListener("keyup", (e) => handleStop(e));
   }, []);
 
   return (
