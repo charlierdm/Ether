@@ -1,39 +1,56 @@
 import "../App.css";
 import { useEffect } from "react";
 import { Howl } from "howler";
-import qwertyAudioA from './qwertyAudioA.mp3';
-import qwertyAudioD from './qwertyAudioD.mp3';
-import qwertyAudioS from './qwertyAudioS.mp3';
+import qwertyAudioA from "./qwertyAudioA.mp3";
+import qwertyAudioD from "./qwertyAudioD.mp3";
+import qwertyAudioS from "./qwertyAudioS.mp3";
 
 export const QwertyButtons = ({ keyPress, setKeyPress }) => {
-
   const audioA = new Howl({
     src: [qwertyAudioA],
-    volume: 0.8
+    volume: 0.8,
   });
 
   const audioS = new Howl({
     src: [qwertyAudioS],
-    volume: 0.8
+    volume: 0.8,
   });
 
   const audioD = new Howl({
     src: [qwertyAudioD],
-    volume: 1.1
-  });  
+    volume: 1.1,
+  });
 
   const selectSampleToPlay = (key) => {
     if (key === "a" && !audioA.playing()) return audioA.play();
     if (key === "s" && !audioS.playing()) return audioS.play();
     if (key === "d" && !audioD.playing()) return audioD.play();
-  }
+  };
 
-  const selectSampleToStop = (key) => {
-    if (key === "a") return audioA.stop();
-    if (key === "s") return audioS.stop();
-    if (key === "d") return audioD.stop();
-  }
-  
+  const sampleFadeAndStop = (key) => {
+    if (key === "a") {
+      audioA.fade(0.8, 0, 1500);
+      setTimeout(() => {
+        audioA.stop();
+        audioA.fade(0, 0.8, 0);
+      }, 1500);
+    }
+    if (key === "s") {
+      audioS.fade(0.8, 0, 1500);
+      setTimeout(() => {
+        audioS.stop();
+        audioS.fade(0, 0.8, 0);
+      }, 1500);
+    }
+    if (key === "d") {
+      audioD.fade(0.8, 0, 1500);
+      setTimeout(() => {
+        audioD.stop();
+        audioD.fade(0, 0.8, 0);
+      }, 1500);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       setKeyPress(e.key);
@@ -44,7 +61,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
       if (e.key) {
         setKeyPress("");
       }
-      selectSampleToStop(e.key)
+      sampleFadeAndStop(e.key);
     });
   }, []);
 
