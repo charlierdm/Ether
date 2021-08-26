@@ -13,7 +13,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
 
   const audioS = new Howl({
     src: [qwertyAudioS],
-    volume: 0.8,
+    volume: 0.9,
   });
 
   const audioD = new Howl({
@@ -58,7 +58,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
 
   const handleStop = (e) => {
     if (e.key.toLowerCase()) {
-      setKeyPress("");
+      setKeyPress("fade-bg-back");
     }
     sampleFadeAndStop(e.key.toLowerCase());
   };
