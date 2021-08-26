@@ -15,7 +15,7 @@ button {
   border-style: none;
   border-radius: 0.6rem;
   box-shadow: 0 0.3rem 0.5rem 0 rgb(116, 117, 117);
-  transition: box-shadow 0.5s;
+  transition: box-shadow 1.2s;
   cursor: pointer;
 }
 
@@ -26,17 +26,17 @@ button:hover {
 
 .press-a {
   box-shadow: 0 8px 14px 0 rgb(97, 160, 160);
-  transition: box-shadow 0.5s;
+  transition: box-shadow 1.2s;
 }
 
 .press-s {
   box-shadow: 0 8px 14px 0 rgb(187, 163, 120);
-  transition: box-shadow 0.5s;
+  transition: box-shadow 1.2s;
 }
 
 .press-d {
   box-shadow: 0 8px 14px 0 rgb(221, 186, 212);
-  transition: box-shadow 0.5s;
+  transition: box-shadow 1.2s;
 }
 
 /* 

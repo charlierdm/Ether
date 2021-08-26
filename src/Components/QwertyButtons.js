@@ -1,9 +1,9 @@
 import "../App.css";
 import { useEffect } from "react";
 import { Howl } from "howler";
-import qwertyAudioA from "./qwertyAudioA.mp3";
-import qwertyAudioD from "./qwertyAudioD.mp3";
-import qwertyAudioS from "./qwertyAudioS.mp3";
+import qwertyAudioA from "./qwertyA.mp3";
+import qwertyAudioD from "./qwertyD.mp3";
+import qwertyAudioS from "./qwertyS.mp3";
 
 export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   const audioA = new Howl({
@@ -18,7 +18,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
 
   const audioD = new Howl({
     src: [qwertyAudioD],
-    volume: 1.1,
+    volume: 0.8,
   });
 
   const selectSampleToPlay = (key) => {
