@@ -41,6 +41,7 @@ button {
   box-shadow: 0 0.3rem 0.5rem 0 rgb(116, 117, 117);
   transition: box-shadow 1.2s;
   cursor: pointer;
+  user-select: none;
 }
 
 button:hover {

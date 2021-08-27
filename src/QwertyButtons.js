@@ -18,7 +18,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
 
   const audioD = new Howl({
     src: [qwertyAudioD],
-    volume: 0.8,
+    volume: 0.7,
   });
 
   const selectSampleToPlay = (key) => {
@@ -61,16 +61,46 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
     sampleFadeAndStop(e.key.toLowerCase());
   };
 
+  const handleMouseDown = (e) => {
+    if (
+      e.target.name === "a" ||
+      e.target.name === "s" ||
+      e.target.name === "d"
+    ) {
+      setKeyPress(e.target.name);
+      selectSampleToPlay(e.target.name);
+    }
+  };
+
+  const handleMouseUp = (e) => {
+    if (
+      e.target.name === "a" ||
+      e.target.name === "s" ||
+      e.target.name === "d"
+    ) {
+      setKeyPress("fade-bg-back");
+      sampleFadeAndStop(e.target.name);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("keydown", (e) => handlePlay(e));
     document.addEventListener("keyup", (e) => handleStop(e));
+    document.addEventListener("mousedown", (e) => handleMouseDown(e));
+    document.addEventListener("mouseup", (e) => handleMouseUp(e));
   }, []);
 
   return (
     <div className="qwerty-buttons">
-      <button className={keyPress === "a" ? "press-a" : ""}>A</button>
-      <button className={keyPress === "s" ? "press-s" : ""}>S</button>
-      <button className={keyPress === "d" ? "press-d" : ""}>D</button>
+      <button className={keyPress === "a" ? "press-a" : ""} name="a">
+        A
+      </button>
+      <button className={keyPress === "s" ? "press-s" : ""} name="s">
+        S
+      </button>
+      <button className={keyPress === "d" ? "press-d" : ""} name="d">
+        D
+      </button>
     </div>
   );
 };
