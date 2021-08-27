@@ -18,6 +18,27 @@ Ether is a visual audio project, built using React and Ableton Live.
 
 https://user-images.githubusercontent.com/75075773/130951254-a81147ba-8740-4b09-8600-ccd2b12fbf81.mp4
 
+## User Stories
+
+```
+As a user
+So that I can enjoy some synthesized sounds
+I want to be able to hear the audio samples play in my browser
+
+As a user
+So that I can play the sounds like a keyboard
+I want to press use the qwerty keyboard to play sounds
+
+As a user
+So that I can play the notes for as long as I like
+I would like the audio to stop and start for the duration I hold the key down
+
+As a user
+So that I can be immersed in the visual experience
+I want to see visual changes based on my qwerty keyboard playing
+
+```
+
 ## Installation
 
 Enter the following in your terminal:
