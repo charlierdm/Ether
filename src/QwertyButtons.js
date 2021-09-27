@@ -56,9 +56,19 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
     selectSampleToPlay(e.key);
   };
 
+  const handlePlayTouch = (e) => {
+    setKeyPress(e.target.name);
+    selectSampleToPlay(e.target.name);
+  };
+
   const handleStop = (e) => {
     setKeyPress("fade-bg-back");
     sampleFadeAndStop(e.key);
+  };
+
+  const handleStopTouch = (e) => {
+    setKeyPress("fade-bg-back");
+    sampleFadeAndStop(e.target.name);
   };
 
   const handleMouseDown = (e) => {
@@ -92,13 +102,13 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
 
   return (
     <div className="qwerty-buttons">
-      <button className={keyPress === "a" ? "press-a" : ""} name="a">
+      <button className={keyPress === "a" ? "press-a" : ""} name="a" onTouchStart={(e) => handlePlayTouch(e)} onTouchEnd={(e) => handleStopTouch(e)}>
         A
       </button>
-      <button className={keyPress === "s" ? "press-s" : ""} name="s">
+      <button className={keyPress === "s" ? "press-s" : ""} name="s" onTouchStart={(e) => handlePlayTouch(e)} onTouchEnd={(e) => handleStopTouch(e)}>
         S
       </button>
-      <button className={keyPress === "d" ? "press-d" : ""} name="d">
+      <button className={keyPress === "d" ? "press-d" : ""} name="d" onTouchStart={(e) => handlePlayTouch(e)} onTouchEnd={(e) => handleStopTouch(e)}>
         D
       </button>
     </div>
