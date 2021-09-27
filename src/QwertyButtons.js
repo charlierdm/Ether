@@ -28,21 +28,21 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   };
 
   const sampleFadeAndStop = (key) => {
-    if (key === "a") {
+    if (key == "a") {
       audioA.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioA.stop();
         audioA.fade(0, 0.8, 0);
       }, 1500);
     }
-    if (key === "s") {
+    if (key == "s") {
       audioS.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioS.stop();
         audioS.fade(0, 0.8, 0);
       }, 1500);
     }
-    if (key === "d") {
+    if (key == "d") {
       audioD.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioD.stop();
@@ -67,6 +67,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   };
 
   const handleStopTouch = (e) => {
+    console.log(e.target.name);
     setKeyPress("fade-bg-back");
     sampleFadeAndStop(e.target.name);
   };
@@ -96,8 +97,8 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   useEffect(() => {
     document.addEventListener("keydown", (e) => handlePlay(e));
     document.addEventListener("keyup", (e) => handleStop(e));
-    document.addEventListener("mousedown", (e) => handleMouseDown(e));
-    document.addEventListener("mouseup", (e) => handleMouseUp(e));
+    // document.addEventListener("mousedown", (e) => handleMouseDown(e));
+    // document.addEventListener("mouseup", (e) => handleMouseUp(e));
   }, []);
 
   return (
