@@ -5,7 +5,6 @@ Ether is a visual audio project, built using React and Ableton Live.
 * [Installation](https://github.com/charlierdm/Ether-Visual-Audio#Installation)
 * [Audio Visual Example](https://github.com/charlierdm/Ether-Visual-Audio#Audio-Visual-Example)
 
-
 ![ether1](https://user-images.githubusercontent.com/75075773/130949596-58522b41-507f-481c-9a6b-7b06ddf37667.gif)
 
 
