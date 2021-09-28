@@ -35,14 +35,14 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
         audioA.fade(0, 0.8, 0);
       }, 1500);
     }
-    if (key == "s") {
+    if (key === "s") {
       audioS.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioS.stop();
         audioS.fade(0, 0.8, 0);
       }, 1500);
     }
-    if (key == "d") {
+    if (key === "d") {
       audioD.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioD.stop();
@@ -67,7 +67,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   };
 
   const handleStopTouch = (e) => {
-    console.log(e.target.name);
+    e.preventDefault()
     setKeyPress("fade-bg-back");
     sampleFadeAndStop(e.target.name);
   };
@@ -97,19 +97,21 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   useEffect(() => {
     document.addEventListener("keydown", (e) => handlePlay(e));
     document.addEventListener("keyup", (e) => handleStop(e));
-    // document.addEventListener("mousedown", (e) => handleMouseDown(e));
-    // document.addEventListener("mouseup", (e) => handleMouseUp(e));
+    document.addEventListener("mousedown", (e) => handleMouseDown(e));
+    document.addEventListener("mouseup", (e) => handleMouseUp(e));
+    document.addEventListener("touchstart", (e) => handlePlayTouch(e));
+    document.addEventListener("touchend", (e) => handleStopTouch(e));
   }, []);
 
   return (
     <div className="qwerty-buttons">
-      <button className={keyPress === "a" ? "press-a" : ""} name="a" onTouchStart={(e) => handlePlayTouch(e)} onTouchEnd={(e) => handleStopTouch(e)}>
+      <button className={keyPress === "a" ? "press-a" : ""} name="a">
         A
       </button>
-      <button className={keyPress === "s" ? "press-s" : ""} name="s" onTouchStart={(e) => handlePlayTouch(e)} onTouchEnd={(e) => handleStopTouch(e)}>
+      <button className={keyPress === "s" ? "press-s" : ""} name="s" >
         S
       </button>
-      <button className={keyPress === "d" ? "press-d" : ""} name="d" onTouchStart={(e) => handlePlayTouch(e)} onTouchEnd={(e) => handleStopTouch(e)}>
+      <button className={keyPress === "d" ? "press-d" : ""} name="d" >
         D
       </button>
     </div>
