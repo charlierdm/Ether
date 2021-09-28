@@ -42,6 +42,7 @@ button {
   transition: box-shadow 1.2s;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
