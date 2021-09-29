@@ -9,7 +9,7 @@
 .s-app-container {
   background-color: rgb(233, 219, 208);
   min-height: 100vh;
-  transition: background-color 1.4s ease-in-out ;
+  transition: background-color 1.4s ease-in-out;
 }
 
 .d-app-container {
@@ -21,13 +21,28 @@
 .fade-bg-back-app-container {
   background-color: rgb(213, 223, 231);
   min-height: 100vh;
-  transition: background-color 1.6s ease-in-out ;
+  transition: background-color 1.6s ease-in-out;
+}
+
+.loading {
+  color: #fff;
+  font-size: 2.7rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 9rem;
+  animation: fadeIn 2.2s infinite;
 }
 
 .qwerty-buttons {
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 button {
@@ -70,6 +85,7 @@ button:hover {
     display: grid;
     grid-auto-flow: row;
     justify-content: center;
+
   }
   button {
     padding: 2.5rem 3.5rem;
