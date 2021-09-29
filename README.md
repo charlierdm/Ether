@@ -2,8 +2,6 @@
 
 Ether is a visual audio project, built using React and Ableton Live.
 
-Ether is deployed, try it out [here](https://ether-audio-visual.netlify.app)
-
 Play it using the a, s and d keys on your keyboard or if on a mobile device, by pressing and holding the buttons.
 
 * [Installation](https://github.com/charlierdm/Ether-Visual-Audio#Installation)
@@ -19,8 +17,9 @@ Play it using the a, s and d keys on your keyboard or if on a mobile device, by 
 
 ## Audio Visual Example
 
+A screen capture of the app, enable 
 
-https://user-images.githubusercontent.com/75075773/135127564-a29059ea-95ec-4196-8603-560957c8dae2.mp4
+https://user-images.githubusercontent.com/75075773/135316732-5745c037-e257-44bc-be9f-227641f73f32.mp4
 
 
 
@@ -33,7 +32,7 @@ I want to be able to hear the audio samples play in my browser
 
 As a user
 So that I can play the sounds like a keyboard
-I want to press use the qwerty keyboard to play sounds
+I want to press the qwerty keyboard to play sounds
 
 As a user
 So that I can play the notes for as long as I like
