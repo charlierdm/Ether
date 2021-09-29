@@ -2,7 +2,9 @@
 
 Ether is a visual audio project, built using React and Ableton Live.
 
-Play it using the a, s and d keys on your keyboard or by pressing and holding the buttons to play the audio samples.
+Ether is deployed, try it out [here](https://ether-audio-visual.netlify.app)
+
+Play it using the a, s and d keys on your keyboard or if on a mobile device, by pressing and holding the buttons.
 
 * [Installation](https://github.com/charlierdm/Ether-Visual-Audio#Installation)
 * [Audio Visual Example](https://github.com/charlierdm/Ether-Visual-Audio#Audio-Visual-Example)

@@ -28,7 +28,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   };
 
   const sampleFadeAndStop = (key) => {
-    if (key == "a") {
+    if (key === "a") {
       audioA.fade(0.8, 0, 1500);
       setTimeout(() => {
         audioA.stop();
@@ -95,8 +95,10 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   };
 
   const isLoaded = (a, s, d) => {
-    return a.state() === "loaded" && s.state() === "loaded" && d.state() === "loaded";
-  }
+    return (
+      a.state() === "loaded" && s.state() === "loaded" && d.state() === "loaded"
+    );
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => handlePlay(e));
@@ -122,7 +124,7 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
           </button>
         </div>
       ) : (
-        <span className="loading" >Loading samples...</span>
+        <span className="loading">Loading samples...</span>
       )}
     </>
   );
