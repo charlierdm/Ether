@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Howl } from "howler";
 import qwertyAudioA from "./qwertyA.mp3";
 import qwertyAudioD from "./qwertyD.mp3";
@@ -9,16 +9,19 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   const audioA = new Howl({
     src: [qwertyAudioA],
     volume: 0.7,
+    autoUnlock: false,
   });
 
   const audioS = new Howl({
     src: [qwertyAudioS],
     volume: 0.7,
+    autoUnlock: false,
   });
 
   const audioD = new Howl({
     src: [qwertyAudioD],
     volume: 0.6,
+    autoUnlock: false,
   });
 
   const selectSampleToPlay = (key) => {
@@ -94,12 +97,6 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
     }
   };
 
-  const isLoaded = (a, s, d) => {
-    return (
-      a.state() === "loaded" && s.state() === "loaded" && d.state() === "loaded"
-    );
-  };
-
   useEffect(() => {
     document.addEventListener("keydown", (e) => handlePlay(e));
     document.addEventListener("keyup", (e) => handleStop(e));
@@ -110,22 +107,16 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   }, []);
 
   return (
-    <>
-      {isLoaded(audioA, audioS, audioD) ? (
-        <div className="qwerty-buttons">
-          <button className={keyPress === "a" ? "press-a" : ""} name="a">
-            A
-          </button>
-          <button className={keyPress === "s" ? "press-s" : ""} name="s">
-            S
-          </button>
-          <button className={keyPress === "d" ? "press-d" : ""} name="d">
-            D
-          </button>
-        </div>
-      ) : (
-        <span className="loading">Loading samples...</span>
-      )}
-    </>
+    <div className="qwerty-buttons">
+      <button className={keyPress === "a" ? "press-a" : ""} name="a">
+        A
+      </button>
+      <button className={keyPress === "s" ? "press-s" : ""} name="s">
+        S
+      </button>
+      <button className={keyPress === "d" ? "press-d" : ""} name="d">
+        D
+      </button>
+    </div>
   );
 };
