@@ -10,19 +10,16 @@ export const QwertyButtons = ({ keyPress, setKeyPress }) => {
   const audioA = new Howl({
     src: [qwertyAudioA],
     volume: 0.7,
-    autoUnlock: false,
   });
 
   const audioS = new Howl({
     src: [qwertyAudioS],
     volume: 0.7,
-    autoUnlock: false,
   });
 
   const audioD = new Howl({
     src: [qwertyAudioD],
     volume: 0.6,
-    autoUnlock: false,
   });
 
   const selectSampleToPlay = (key) => {
